@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/gif" href="images/favicon.gif">
+    <style>
+        h1{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #c4b5fd;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #c4b5fd;
+            padding: 10px 20px;
+            color: #5b21b6;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #7c3aed;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #ede9fe;
+            color: #2e1065;
+        }
+
+        .navbar ul li .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #ede9fe;
+            top: 40px;
+            left: 0;
+            width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar ul li .dropdown a {
+            padding: 10px;
+        }
+
+        .navbar ul li:hover .dropdown {
+            display: block;
+        }
+
+        .navbar .social-icons a {
+            color: #8b5cf6;
+            padding: 0 10px;
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1000px;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+
+        }
+
+        .text-section {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .text-section h1 {
+            margin-top: 0;
+            color: #3b0764;
+        }
+
+        .text-section p {
+            margin-bottom: 20px;
+            color: #400698;
+            justify-content: center;
+        }
+
+
+
+
+
+
+        .btn-37,
+        .btn-37 *,
+        .btn-37 :after,
+        .btn-37 :before,
+        .btn-37:after,
+        .btn-37:before {
+            border: 0 solid;
+            box-sizing: border-box;
+        }
+
+        .btn-37 {
+            -webkit-tap-highlight-color:
+                transparent;
+
+            background-color:
+                #000;
+            background-image: none;
+            color:
+                #fff;
+            cursor: pointer;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+                Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            font-size: 100%;
+            font-weight: 900;
+            line-height: 1.5;
+            margin: 0;
+
+            padding: 0;
+        }
+
+        .btn-37:disabled {
+            cursor: default;
+        }
+
+        .btn-37:-moz-focusring {
+            outline: auto;
+        }
+
+        .btn-37 svg {
+            display: block;
+
+        }
+
+        .btn-37 [hidden] {
+            display: none;
+        }
+
+        .btn-37 {
+            border: 1px solid;
+            box-sizing: border-box;
+            display: block;
+            overflow: hidden;
+            padding: 1.1rem 4rem;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .btn-37 .new,
+        .btn-37 .old span {
+            font-weight: 900;
+            transition: transform 0.2s;
+        }
+
+        .btn-37 .new {
+            display: block;
+            transform: scale(0);
+        }
+
+        .btn-37:hover .new {
+            transform: scale(1);
+        }
+
+        .btn-37 .old,
+        .btn-37 .old span {
+            inset: 0;
+            position: absolute;
+        }
+
+        .btn-37 .old span {
+            background:
+                #fff;
+            color:
+                #000;
+            display: block;
+            display: grid;
+            place-items: center;
+        }
+
+        .btn-37 .old span:first-child {
+            -webkit-clip-path: polygon(0 0, 51% 0, 51% 100%, 0 100%);
+            clip-path: polygon(0 0, 51% 0, 51% 100%, 0 100%);
+        }
+
+        .btn-37 .old span:nth-child(2) {
+            -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+
+        .btn-37:hover .old span:first-child {
+            transform: translateY(-100%);
+        }
+
+        .btn-37:hover .old span:nth-child(2) {
+            transform: translateY(100%);
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+        }
+
+        .photo-section {
+            flex: 1;
+            background: url('path-to-your-photo.jpg') no-repeat center center/cover;
+        }
+
+        .social-links img {
+            width: 2rem;
+            height: 2rem;
+            object-fit: cover;
+        }
+
+
+
+
+
+        .text {
+            font-size: 20px;
+            color: #333;
+            transition: color 0.3s ease;
+            text-align: justify;
+        }
+
+        .text:hover {
+            color: #042f2e;
+        }
+
+
+        .language-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .language-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e8e4ef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            gap: 2rem;
+            margin: 0.2rem;
+            margin-top: 10px;
+            transition: transform 0.3s ease;
+            /* Add transition property */
+        }
+
+        .language-icon:hover {
+            transform: scale(1.1);
+            /* Increase scale on hover */
+        }
+
+        .btn-92,
+.btn-92 *,
+.btn-92 :after,
+.btn-92 :before,
+.btn-92:after,
+.btn-92:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-92 {
+  -webkit-tap-highlight-color: 
+transparent;
+ 
+  background-color: 
+  #8b5cf6;
+  background-image: none;
+  color: 
+#fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+ 
+  padding: 0;
+}
+.btn-92:disabled {
+  cursor: default;
+}
+.btn-92:-moz-focusring {
+  outline: auto;
+}
+.btn-92 svg {
+  display: block;
+ 
+}
+.btn-92 [hidden] {
+  display: none;
+}
+.btn-92 {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 38%;
+    display:inline-flex;
+  border: 3px solid;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  box-sizing: border-box;
+ 
+  font-weight: 900;
+  overflow: hidden;
+  padding: 20px 80px;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.btn-92:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em 
+#fff;
+  transform: translateY(-0.25em);
+}
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px 10px; /* Adjust padding for smaller screens */
+    }
+    .navbar ul {
+        flex-direction: column;
+        padding: 0; /* Stack items vertically and remove default padding */
+    }
+    .navbar ul li {
+        margin-bottom: 5px; /* Add spacing between list items */
+    }
+    .navbar ul li .dropdown {
+        top: 30px; /* Adjust dropdown position */
+        width: 160px; /* Narrower dropdown for smaller screens */
+    }
+    
+    .social-icons a {
+        padding: 0 8px; /* Adjust padding around social icons */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <a href="#projects">Projects</a>
+                <div class="dropdown">
+                    <a href="WD.HTML">Web Development</a>
+                    <a href="FLUTTER.html">Flutter</a>
+                    <a href="ML.html">Machine Learning</a>
+                </div>
+            </li>
+          
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="text-section">
+            <h1 style="font-size: 50px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">About Me</h1>
+            <div class="container1">
+                <h1 class="text">
+                    As a passionate computer engineer, I delve deep into the realms of operating systems, computer
+                    networks, and the intricate world of design and coding. My journey is fueled by a relentless
+                    curiosity to understand the fundamental structures that govern modern computing.<br><br></h1><i>"The
+                    only limit to our realization of tomorrow will be our doubts of today".</i><br><br><br>
+            </div>
+            <div class="buttons">
+                <button class="btn-37">
+                    <span class="new">Prakriti Dwivedi</span>
+                    <div class="old">
+                        <span>Computer Engineer</span>
+                        <span aria-hidden>Computer Engineer</span>
+                    </div>
+                </button>
+
+            </div><br>
+            <div class="social-links">
+
+                <a href="https://github.com/hiiamkarati?tab=repositories" target="_blank"><img
+                        src="images/github.png"></a>
+                <a href="https://linkedin.com/in/prakriti-dwivedi-2072b7225" target="_blank"><img src="images/linkedin.png" alt=""></a>
+                <a href="mailto:prakritidwivedi22@gmail.com" target="_blank"><img src="images/email.png" alt=""></a>
+                <a href="" target="_blank"><img src="images/instagram.png" alt=""></a>
+
+
+            </div>
+        </div>
+        <div class="photo-section">
+            <img src="pk.jpg" alt="Your Description" style="width: 100%; height: auto; border-radius: 50%;">
+        </div>
+
+    </div>
+
+
+    <br><br><br><br>
+    <div class="language-icons">
+        <div class="language-icon"><img src="images/java.png" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/c.png" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/c++.png" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/django.png" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/figma.png" style="height: 2rem;width: 2rem;"></i></div>
+        <div class="language-icon"><img src="images/git.png" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/iot.png" style="height: 2rem;width: 2rem;"></i></div>
+        <div class="language-icon"><img src="images/css.svg" style="height: 2rem;width: 2rem;"></i></div>
+
+
+    </div>
+    <div class="language-icons">
+        <div class="language-icon"><img src="images/js.png" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/mysql.svg" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/python.png" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/html.png" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/node.png" style="height: 2rem;width: 2rem;"></i></div>
+        <div class="language-icon"><img src="images/embedded.png" style="height: 2rem;width: 2rem;"></div>
+        <div class="language-icon"><img src="images/typescript.png" style="height: 2rem;width: 2rem;"></i></div>
+        <div class="language-icon"><img src="images/devops.png" style="height: 2rem;width: 2rem;"></i></div>
+
+
+    </div>
+
+<div>
+    <a href="RESUME-().pdf" download="Prakriti Dwivedi Resume.pdf" class="btn-92">MY RESUME!</a>
+
+</div>
+</body>
+
+</html>

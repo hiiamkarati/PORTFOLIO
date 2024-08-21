@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Prakriti Dwivedi</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/gif" href="images/favicon.gif">
+    <style>
+        .wrap-input-4 .input {
+            width: 100%;
+            box-sizing: border-box;
+            letter-spacing: 1px;
+            border: 0;
+            padding: 5px 0 7px;
+            border: 1px solid transparent;
+            border-bottom-color: #3f1f73;
+            transition: 0.4s;
+        }
+
+        .wrap-input-4 .input:focus {
+            outline: none;
+            padding: 5px 14px 7px;
+            transition: 0.4s;
+            color: #6407ce;
+        }
+
+        .wrap-input-4 {
+            width: 80%;
+            margin: 40px 3%;
+            position: relative;
+        }
+
+        .wrap-input-4 .input~.focus-border {
+            position: absolute;
+            height: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transition: 0.4s;
+            z-index: -1;
+        }
+
+        .wrap-input-4 .input:focus~.focus-border {
+            transition: 0.4s;
+            height: 36px;
+            border: 2px solid hsla(284, 40%, 44%, 0.2);
+            z-index: 1;
+        }
+
+        .rounded-gif {
+            border-radius: 50%;
+            animation: rotate 5s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ig {
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .btn-101,
+        .btn-101 *,
+        .btn-101 :after,
+        .btn-101 :before,
+        .btn-101:after,
+        .btn-101:before {
+            border: 0 solid;
+            box-sizing: border-box;
+
+        }
+
+        .btn-101 {
+            -webkit-tap-highlight-color:
+                transparent;
+
+            background-color:
+                #9805e1;
+            background-image: none;
+            color:
+                #6407ce;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+                Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            font-size: 100%;
+            font-weight: 900;
+            line-height: 1.5;
+            margin-top: 1rem;
+            margin-bottom: 5rem;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-left: 38%;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        .btn-101:disabled {
+            cursor: default;
+        }
+
+        .btn-101:-moz-focusring {
+            outline: auto;
+        }
+
+        .btn-101 svg {
+            vertical-align: middle;
+        }
+
+        .btn-101 [hidden] {
+            display: none;
+        }
+
+        .btn-101 {
+            --thickness: 0.3rem;
+            --roundness: 1.2rem;
+            --color:
+                #a094fa;
+            --opacity: 0.6;
+            -webkit-backdrop-filter: blur(50px);
+            backdrop-filter: blur(100px);
+            background: none;
+            background:
+                hsla(284, 40%, 44%, 0.2);
+            border: none;
+            border-radius: var(--roundness);
+            color: var(--color);
+            cursor: pointer;
+            display: block;
+            font-family: Poppins, "sans-serif";
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.8rem 3rem;
+            position: relative;
+        }
+
+        .btn-101:hover {
+            background:
+                hsla(284, 40%, 44%, 0.2);
+            filter: brightness(1.2);
+        }
+
+        .btn-101:active {
+            --opacity: 0;
+            background:
+                hsla(0, 95%, 43%, 0.1);
+        }
+
+        .btn-101 svg {
+            border-radius: var(--roundness);
+            display: block;
+            filter: url(#glow);
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .btn-101 rect {
+            fill: none;
+            stroke: var(--color);
+            stroke-width: var(--thickness);
+
+            stroke-linejoin: round;
+            stroke-dasharray: 185%;
+            stroke-dashoffset: 80;
+            -webkit-animation: snake 2s linear infinite;
+            animation: snake 2s linear infinite;
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.2s;
+            width: 100%;
+        }
+
+        .btn-101:hover rect {
+            -webkit-animation-play-state: running;
+            animation-play-state: running;
+            opacity: var(--opacity);
+            ;
+        }
+
+        @-webkit-keyframes snake {
+            to {
+                stroke-dashoffset: 370%;
+            }
+        }
+
+        @keyframes snake {
+            to {
+                stroke-dashoffset: 370%;
+            }
+        }
+
+
+        .card-slider {
+            width: 80%;
+            max-width: 800px;
+            overflow: hidden;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            /* Adjust spacing between cards */
+        }
+
+        .card {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: calc(100% / 3 - 20px);
+            /* Adjust width based on number of cards */
+            margin-right: 20px;
+            /* Adjust spacing between cards */
+            transition: transform 0.3s ease;
+            flex: 1 0 auto;
+        }
+
+        .card:last-child {
+            margin-right: 0;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-image {
+            overflow: hidden;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .card-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background-color: #22114c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #fff;
+            animation: slide-in 0.5s ease-in-out forwards;
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateX(-50%) scaleY(0);
+            }
+            100% {
+                transform: translateX(-50%) scaleY(1);
+            }
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+
+        .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c4b5fd;
+    padding: 10px 20px;
+    color: #5b21b6;
+}
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.navbar ul li {
+    position: relative;
+}
+.navbar ul li a {
+    color: #7c3aed;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+.navbar ul li a:hover {
+    background-color: #ede9fe;
+    color: #2e1065;
+}
+.navbar ul li .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #ede9fe;
+    top: 40px;
+    left: 0;
+    width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.navbar ul li .dropdown a {
+    padding: 10px;
+}
+.navbar ul li:hover .dropdown {
+    display: block;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <a href="#projects">Projects</a>
+                <div class="dropdown">
+                    <a href="WD.HTML">Web Development</a>
+                    <a href="FLUTTER.html">Flutter</a>
+                    <a href="ML.html">Machine Learning</a>
+                </div>
+            </li>
+           
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://github.com/hiiamkarati?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/prakriti-dwivedi-2072b7225" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@Prakriti_Dwivedi" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </nav>
+
+    <div class="ig">
+        <video width="200" height="200" autoplay loop muted class="rounded-gif">
+            <source src="images/contact.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <form action="mailto:dwivediprakriti22@gmail.com" method="post" enctype="text/plain">
+        <div class="forms">
+            <div class="wrap-input-4">
+                <input class="input" type="text" placeholder="Name">
+                <span class="focus-border"></span>
+            </div>
+            <div class="wrap-input-4">
+                <input class="input" type="text" placeholder="Email-Id">
+                <span class="focus-border"></span>
+            </div>
+            <div class="wrap-input-4">
+                <input class="input" type="text" placeholder="Message">
+                <span class="focus-border"></span>
+            </div>
+
+        </div>
+        <button class="btn-101">
+            SUBMIT
+            <svg>
+                <defs>
+                    <filter id="glow">
+                        <fegaussianblur result="coloredBlur" stddeviation="5"></fegaussianblur>
+                        <femerge>
+                            <femergenode in="coloredBlur"></femergenode>
+                            <femergenode in="coloredBlur"></femergenode>
+                            <femergenode in="coloredBlur"></femergenode>
+                            <femergenode in="SourceGraphic"></femergenode>
+                        </femerge>
+                    </filter>
+                </defs>
+                <rect />
+            </svg>
+        </button>
+    </form>
+
+
+    <div class="card-slider">
+        <div class="card">
+            <div class="card-image">
+                <video width="200" height="200" autoplay loop muted class="rounded-gif">
+                    <source src="images/artificial-intelligence.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="card-content">
+                <h3 style="color: #3b0764;">AI and Machine Learning Projects</h3>
+              <p>"Looking for AI and ML projects to work on—excited to dive into innovative solutions!"s</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <video width="200" height="200" autoplay loop muted class="rounded-gif">
+                    <source src="images/html.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="card-content">
+                <h3 style="color: #3b0764;">WEB DEVELOPMENT PROJECT</h3> <p>"Seeking web development projects? I'm ready to bring your vision to life with my expertise."</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <video width="200" height="200" autoplay loop muted class="rounded-gif">
+                    <source src="images/ai.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="card-content">
+                <h3 style="color: #3b0764;">Backend Expertise</h3>
+                <p>"Ready to handle your backend with expertise in MySQL, MongoDB, and Django. Let's build something great together!"</p>
+            </div>
+        </div><br><br>
+        <!-- Add more cards as needed -->
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Prakriti Dwivedi. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://github.com/hiiamkarati?tab=repositories"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/_prakriti_dwivedi_?"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/prakriti-dwivedi-2072b7225"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>

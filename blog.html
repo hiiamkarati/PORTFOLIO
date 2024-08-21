@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Prakriti Dwivedi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/gif" href="images/favicon.gif">
+</head>
+
+<style>
+    /* styles.css */
+
+    /* General Body Styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(270deg, #e1bee7, #f3e8ff, #e9d5ff, #c084fc, #e2ccf6, #ede9fe, #a78bfa, #fecdd3, #fbcfe8, #f5d0fe, #f0abfc);
+        background-size: 800% 800%;
+        animation: gradientAnimation 10s ease infinite;
+
+
+    }
+
+    /* Gradient Animation for Background */
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Navbar Styles */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 1000;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #7c3aed;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .navbar ul li {
+        position: relative;
+        margin-right: 20px;
+    }
+
+    .navbar ul li a {
+        color: #7c3aed;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    .navbar ul li a:hover {
+        color: #2e1065;
+    }
+
+    .navbar ul li .dropdown {
+        display: none;
+        position: absolute;
+        background-color: #ede9fe;
+        top: 40px;
+        left: 0;
+        width: 200px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar ul li .dropdown a {
+        padding: 10px;
+        color: #7c3aed;
+    }
+
+    .navbar ul li:hover .dropdown {
+        display: block;
+    }
+
+    .navbar .social-icons a {
+        color: #8b5cf6;
+        padding: 0 10px;
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .navbar {
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin-bottom: 5px;
+        }
+
+        .navbar ul li .dropdown {
+            top: 30px;
+            width: 160px;
+        }
+
+        .social-icons a {
+            padding: 0 8px;
+        }
+    }
+
+    /* Content Section Styling */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        margin: 3rem;
+        text-align: justify;
+
+    }
+
+    .content {
+        text-align: justify;
+        text-align: center;
+        color: #9333ea;
+        padding: 1rem;
+        margin: 1rem;
+        animation: blink 1s infinite alternate;
+
+    }
+
+    @keyframes blink {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    .content:hover {
+        color: #7c3aed;
+    }
+
+    /* Animation for Text Elements */
+    .animated-text {
+        color: #7c3aed;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+
+    .animated-text:hover {
+        color: #3b0764;
+    }
+
+    header .animated-text {
+        animation-delay: 0.5s;
+    }
+
+    main .animated-text {
+        animation-delay: 1s;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .head {
+        width: 100%;
+    }
+
+
+
+    .footer {
+        background-color: #22114c;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .footer p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .footer::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background-color: #fff;
+        animation: slide-in 0.5s ease-in-out forwards;
+    }
+
+    @keyframes slide-in {
+        0% {
+            transform: translateX(-50%) scaleY(0);
+        }
+
+        100% {
+            transform: translateX(-50%) scaleY(1);
+        }
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-icons a {
+        color: white;
+        font-size: 20px;
+        margin: 0 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-3px);
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <a href="#projects">Projects</a>
+                <div class="dropdown">
+                    <a href="WD.HTML">Web Development</a>
+                    <a href="FLUTTER.html">Flutter</a>
+                    <a href="ML.html">Machine Learning</a>
+                </div>
+            </li>
+
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://github.com/hiiamkarati?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/prakriti-dwivedi-2072b7225" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@Prakriti_Dwivedi" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="head">
+            <div class="content">
+                <h1>Welcome to my world of code and creativity.</h1>
+                <p>Explore my work and skills</p>
+            </div>
+
+            <header>
+                <h1 class="animated-text" style="text-align: center; color: #2e1065;">Welcome to My Blog</h1>
+            </header>
+            <main>
+                <article>
+                    <h2 class="animated-text">Mastering Multiple Coding Languages: A Beginner's Guide to Software
+                        Development</h2>
+                    <p class="animated-text" style="font-size: 16px;"<br><span style="font-size: 16px;font-weight: bold;">Coding</span><br><br>
+
+                        Learning to code can be an overwhelming journey, especially for beginners. However, with the
+                        right approach and dedication, mastering multiple coding languages is entirely achievable. Below
+                        are some essential tips and strategies help you navigate this exciting path into the world of
+                        software development<br><br> <span style="font-size: 16px;font-weight:bold"> Start with the
+                            Basics</span><br><br>
+
+                        Begin your coding journey by understanding fundamental concepts such as variables, loops, and
+                        functions.
+
+                        Take your time to grasp the building blocks of coding before moving on to more advanced topics.
+
+                        regularly and challenge yourself with simple coding exercises to reinforce your understanding.
+
+                        Choose Your First Language Wisely
+
+                        Select a beginner-friendly programming language like Python or JavaScript to kickstart your
+                        coding journey.
+
+                        Consider the specific purpose or industry you want to focus on when choosing a programming
+                        language.
+
+                        Once you feel comfortable with the basics, explore other languages to broaden your skill set.
+
+                        Immerse Yourself in Coding Communities
+
+                        Join online forums, coding communities, and social media groups to connect with like-minded
+                        individuals.
+
+                        Engage in coding challenges, hackathons, and collaborative projects to enhance your coding
+                        skills.
+
+                        Leverage peer support and mentorship opportunities to accelerate your learning process.<br><br>
+
+                        <span style="font-size: 16px;font-weight:bold">Real-World Projects</span> <br><br>
+
+                        -Apply your coding knowledge by working on practical projects that interest you.<br>
+
+                        -Start with small projects and gradually increase the complexity to challenge yourself.<br>
+
+                        -Building real-world applications will not only solidify your coding skills but also create a
+                        strong portfolio.<br><br>
+
+                        <span style="font-size: 16px;font-weight:bold">Stay Curious and Keep Learning</span>Stay Curious and Keep
+                        Learning<br><br>
+
+                        Software development is a rapidly evolving field, so stay curious and never stop learning.
+
+                        Explore new coding languages, frameworks, and technologies to expand your knowledge base.
+
+                        Enroll in online courses, attend coding workshops, and read coding books to stay updated with
+                        the latest trends.<br><br>
+
+                        <span style="font-size: 16px;font-weight:bold"> Conclusion</span><br><br>
+
+                        In conclusion, mastering multiple coding languages as a beginner requires dedication,
+                        perseverance, and a genuine passion for coding. By starting with the basics, choosing the right
+                        language, engaging with coding communities, building real-world projects, and maintaining a
+                        curious mindset, you can navigate the intricate world of software development successfully.
+                        Remember, the key is to enjoy the learning process and embrace the challenges that come your
+                        way. Happy coding!</p>
+                </article>
+            </main>
+
+
+            <main>
+                <article>
+                    <h2 class="animated-text">From Novice to Pro: The Ultimate Guide to Learning Coding Languages for
+                        Web Development Success</h2>
+                    <p class="animated-text"><span style="font-size: 16px;font-weight:bold">Introduction</span><br><br>
+
+                        Mastering coding languages is a crucial skill in the digital age, particularly for those
+                        aspiring to excel in software development. In this blog post, we will delve into the world of
+                        coding and explore how learners can progress from novices to pros in the realm of web
+                        development. Let's break down the top programming languages for software development in 2024 and
+                        uncover the power that coding holds in transforming careers.<br><br>
+
+                        <span style="font-weight:bold;font-size: 16px;">The Basics of Coding</span><br><br>
+
+                        Coding serves as the foundation for software development, enabling the creation of websites,
+                        applications, and other digital solutions.
+
+                        It involves writing instructions in a specific programming language to communicate with
+                        computers and execute desired functions.
+
+                        Why Learn Multiple Coding Languages
+
+                        Learning multiple coding languages enhances flexibility and adaptability.
+
+                        Different languages are suited for various tasks, allowing developers to choose the best tool
+                        for each project.
+
+                        Top Programming Languages for Software Development in 2024:-<br><br>
+                        1.JavaScript: Widely used for frontend web development and interactive user interfaces.<br>
+
+                        2.Python: Known for its simplicity and versatility, used in web development, data analysis, and
+                        artificial intelligence.<br>
+
+                        3.Java: A robust language for backend development and Android app creation.<br>
+
+                       4.Ruby: Valued for its readability and productivity, commonly used in web applications.<br>
+
+                        5.C++: Ideal for system software, game development, and performance-critical applications.<br><br>
+
+                        <span style="font-weight: bolder;">Tips for Learning Coding Languages</span>
+
+                        Start with a foundational language like<mark style="color: #c084fc;background-color: #3b0764;">Python or JavaScript.</mark> 
+
+                        Practice regularly through coding challenges, projects, and online resources.
+
+                        Seek mentorship from experienced developers and participate in coding communities.<br><br>
+
+                        <span style="font-weight:bold;font-size: 16px;"></span>Conclusion</span><br><br>
+
+                        Embarking on the journey from novice to pro in coding languages is a rewarding endeavor that
+                        opens doors to exciting opportunities in software development. By mastering multiple languages,
+                        aspiring developers can enhance their skill set, increase their employability, and ultimately
+                        achieve success in the dynamic world of web development. So, take the first step today and
+                        unleash your coding potential!</p>
+                </article>
+            </main>
+        </div>
+    </div>
+    <div style="height: 5rem; width: 5rem;">
+        <img src="images/paper-plane.png " style="height: 5rem; width: 5rem;position: sticky;">
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Prakriti Dwivedi. All rights reserved.</p>
+        <div class="social-icons">
+
+            <a href="https://github.com/hiiamkarati?tab=repositories"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/_prakriti_dwivedi_?"><i class="fab fa-instagram"></i></a>
+            <a href="in/prakriti-dwivedi-2072b7225"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

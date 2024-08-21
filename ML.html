@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Prakriti Dwivedi</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/gif" href="images/favicon.gif">
+
+  
+   
+</head>
+<style>
+    
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c4b5fd;
+    padding: 10px 20px;
+    color: #5b21b6;
+}
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.navbar ul li {
+    position: relative;
+}
+.navbar ul li a {
+    color: #7c3aed;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+.navbar ul li a:hover {
+    background-color: #ede9fe;
+    color: #2e1065;
+}
+.navbar ul li .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #ede9fe;
+    top: 40px;
+    left: 0;
+    width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+.navbar ul li .dropdown a {
+    padding: 10px;
+}
+.navbar ul li:hover .dropdown {
+    display: block;
+}
+.navbar .social-icons a {
+    color: #8b5cf6;
+    padding: 0 10px;
+    text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px 10px; /* Adjust padding for smaller screens */
+    }
+    .navbar ul {
+        flex-direction: column;
+        padding: 0; /* Stack items vertically and remove default padding */
+    }
+    .navbar ul li {
+        margin-bottom: 5px; /* Add spacing between list items */
+    }
+    .navbar ul li .dropdown {
+        top: 30px; /* Adjust dropdown position */
+        width: 160px; /* Narrower dropdown for smaller screens */
+    }
+    
+    .social-icons a {
+        padding: 0 8px; /* Adjust padding around social icons */
+    }
+}
+.project {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .project h2 {
+            color: #2e1065;
+        }
+        .project p {
+            color: #2e1065;
+            margin-bottom: 20px;
+        }
+       
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .colab-link {
+            display: inline-block;
+            background-color: #9256f2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .colab-link:hover {
+            background-color: #3b0764;
+        }
+
+        .btn-shaketext {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor:progress;
+  text-transform: uppercase;
+  height: 60px;
+  width: 210px;
+  opacity: 1;
+  margin-left: 30%;
+  background-color: 
+#ffffff;
+  border: 1px solid 
+  #3b0764; }
+  .btn-shaketext span {
+    color: 
+    #7c3aed;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.7px; }
+  .btn-shaketext:hover {
+    animation: rotate 0.7s ease-in-out both; }
+    .btn-shaketext:hover span {
+      animation: storm 0.7s ease-in-out both;
+      animation-delay: 0.06s; 
+      
+    }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0); }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0); }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0); }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0); }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0); } }
+
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0); }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0); }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0); }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0); }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0); } }
+    .btn-hover-border {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: 
+  #8b5cf6;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),
+#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid 
+#0000;
+  outline-offset: .6em;
+  font-size: 16px;
+margin-left: 25%;
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-hover-border:hover,
+.btn-hover-border:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.btn-hover-border:active {
+  background: var(--color);
+  color: 
+#fff;
+}
+
+
+
+
+
+.btn-53,
+.btn-53 *,
+.btn-53 :after,
+.btn-53 :before,
+.btn-53:after,
+.btn-53:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-53 {
+  -webkit-tap-highlight-color: 
+transparent;
+
+  background-color: 
+  #5b21b6;
+  background-image: none;
+  color: 
+  #c084fc;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+ margin-left: 31%;
+  padding: 0;
+}
+.btn-53:disabled {
+  cursor: default;
+}
+.btn-53:-moz-focusring {
+  outline: auto;
+}
+.btn-53 svg {
+  display: block;
+  
+}
+.btn-53 [hidden] {
+  display: none;
+}
+.btn-53 {
+    height: 5rem;
+    width: 12rem;
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+.btn-53 .original {
+  background: 
+  #2e1065;
+  color: 
+  #c4b5fd;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+}
+.btn-53:hover .original {
+  transform: translateY(100%);
+}
+.btn-53 .letters {
+  display: inline-flex;
+}
+.btn-53 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s;
+}
+.btn-53 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+.btn-53:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+.btn-53:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.btn-53:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.btn-53:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+.btn-53:hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+.btn-53:hover span:nth-child(6) {
+  transition-delay: 0.5s;
+}
+.btn-70,
+.btn-70 *,
+.btn-70 :after,
+.btn-70 :before,
+.btn-70:after,
+.btn-70:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-70 {
+  -webkit-tap-highlight-color: 
+
+transparent;
+ 
+  background-color: 
+  #7c3aed;
+  background-image: none;
+  color: 
+  #c084fc;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+ margin-left: 30%;
+  padding: 0;
+}
+.btn-70:disabled {
+  cursor: default;
+}
+.btn-70:-moz-focusring {
+  outline: auto;
+}
+.btn-70 svg {
+  display: block;
+  
+}
+.btn-70 [hidden] {
+  display: none;
+}
+.btn-70 {
+  box-shadow: inset 0 0 0 2px 
+  #2e1065;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+  transition: color 0.1s linear;
+}
+.btn-70:after,
+.btn-70:before {
+  content: "";
+  position: absolute;
+}
+.btn-70:before {
+  border-bottom: var(--border);
+  border-top: var(--border);
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.btn-70:hover:before {
+  --border: 4px solid 
+  #8b5cf6;
+  -webkit-animation: border-top-and-bottom 1s forwards;
+  animation: border-top-and-bottom 1s forwards;
+}
+.btn-70:after {
+  border-left: var(--border);
+  border-right: var(--border);
+  bottom: 50%;
+  right: 0;
+  transform: translateY(50%);
+  width: 100%;
+  z-index: -1;
+}
+.btn-70:hover:after {
+  --border: 4px solid 
+  #d8b4fe;
+  -webkit-animation: border-right-and-left 1s forwards;
+  animation: border-right-and-left 1s forwards;
+}
+@-webkit-keyframes border-top-and-bottom {
+  0% {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes border-top-and-bottom {
+  0% {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes border-right-and-left {
+  0% {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes border-right-and-left {
+  0% {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+
+.footer {
+               background-color: #22114c;
+               color           : white;
+               text-align      : center;
+               padding         : 20px 0;
+               position        : relative;
+               width           : 100%;
+           }
+
+           .footer p {
+               margin: 0;
+               font-size: 14px;
+           }
+
+           .footer::before {
+               content: "";
+               position: absolute;
+               bottom: 100%;
+               left: 50%;
+               transform: translateX(-50%);
+               width: 50px;
+               height: 3px;
+               background-color: #fff;
+               animation: slide-in 0.5s ease-in-out forwards;
+           }
+
+           @keyframes slide-in {
+               0% {
+                   transform: translateX(-50%) scaleY(0);
+               }
+
+               100% {
+                   transform: translateX(-50%) scaleY(1);
+               }
+           }
+
+           .social-icons {
+               display: flex;
+               justify-content: center;
+               margin-top: 10px;
+           }
+
+           .social-icons a {
+               color: white;
+               font-size: 20px;
+               margin: 0 10px;
+               transition: transform 0.3s ease-in-out;
+           }
+
+           .social-icons a:hover {
+               transform: translateY(-3px);
+           }
+</style>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">My Portfolio</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <a href="#projects">Projects</a>
+                <div class="dropdown">
+                    <a href="WD.html">Web Development</a>
+                    <a href="FLUTTER.HTML">Flutter</a>
+                    <a href="ML.html">Machine Learning</a>
+                </div>
+            </li>
+          
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+          <a href="https://github.com/hiiamkarati?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/prakriti-dwivedi-2072b7225" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/@Prakriti_Dwivedi" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </nav>
+
+    <div class="project">
+        <h2>Project 1: Image Classification with CNN</h2>
+        <img src="images/ui-design.png" alt="Project 1 Preview" style="height: 7rem; margin-left: 38%;">
+        <p> I implemented a linear regression model from scratch using NumPy, a fundamental library for numerical computing in Python. Linear regression is a simple yet powerful technique for predicting numeric values based on a linear relationship between input features and the target variable.</p>
+      
+        <button class="btn-shaketext">
+            <span>  <a href="images/AI_ML_Workshop1.ipynb" class="colab-link" target="_blank">AI/ML</a></span>
+          </button>
+    </div>
+
+    <div class="project">
+        <h2>Linear Regression</h2>
+        <img src="images/user-interface.png" alt="Project 2 Preview"style="height: 7rem; margin-left: 38%;">
+        <p>In this project, I developed a linear regression model to predict salaries based on various factors such as years of experience, education level, and job role. The objective was to create an accurate model that could assist job seekers, employers, and HR professionals in estimating salary expectations.</p>
+        
+        <button class="btn-hover-border"><a href="images/Linear_regression_case_study.ipynb" class="colab-link" target="_blank">Linear Regression on Salary</a></button>
+    </div>
+
+    <div class="project">
+        <h2>Random Forest Classifier</h2>
+        <img src="images/user-interface.png" alt="Project 2 Preview"style="height: 7rem; margin-left: 38%;">
+        <p>In this project, I utilized a RandomForestClassifier to predict the likelihood of heart failure based on various clinical features and patient data. RandomForestClassifier is a powerful ensemble learning method that combines multiple decision trees to improve predictive performance.</p>
+        
+       
+        <button class="btn-53">
+            <div class="original"> <a href="images/PCA_heart_disease_prediction_exercise_solution.ipynb" class="colab-link" target="_blank">Linear Regression on Salary</a></div>
+            <div class="letters">
+              <!-- Place each letter in its own element -->
+              <span>P</span>
+              <span>C</span>
+              <span>A</span>
+       
+            </div>
+          </button>
+    </div>
+
+
+    <div class="project">
+        <h2>Haze Removal</h2>
+        <img src="images/programmer.png" alt="Project 1 Preview" style="height: 7rem; margin-left: 38%;">
+        <p> In this project, I implemented a CNN-based model using Keras to remove haze from images. Haze removal is crucial in computer vision applications, enhancing visibility and improving the quality of outdoor images affected by atmospheric conditions.</p>
+     
+        <button class="btn-70"> 
+            <a href="images/HAZE_REMOVAL.ipynb" class="colab-link" target="_blank">AI/ML</a></button>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Prakriti Dwivedi. All rights reserved.</p>
+        <div class="social-icons">
+
+            
+            <a href="https://github.com/hiiamkarati?tab=repositories"><i class="fab fa-github"></i></a>
+            <a href="in/prakriti-dwivedi-2072b7225"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+    </body></html>
